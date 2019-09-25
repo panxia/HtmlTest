@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        perspective: none;
+        perspective-origin: 50% 50%;
+    }
+
+    .warp {
+        width: 500px;
+        height: 500px;
+        margin: 100px auto;
+
+        position: relative;
+
+        transform-style: preserve-3d;
+
+        transform: rotateX(45deg) rotateY(45deg);
+
+        animation: play 5s linear infinite;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #ccc;
+
+        text-align: center;
+        line-height: 200px;
+        font-size: 150px;
+        font-weight: bold;
+        color: #fff;
+
+        position: absolute;
+        top: 150px;
+        left: 150px;
+    }
+
+    .box1 {
+        background: rgba(135,135,135,.3);
+        transform: rotateY(90deg) translateZ(100px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box2 {
+        background: rgba(135,0,255,.3);
+        transform: rotateY(90deg) translateZ(-100px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .box3 {
+        background: rgba(255,125,125,.3);
+        transform: rotateX(90deg) translateZ(-100px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .box4 {
+        background: rgba(125,255,125,.3);
+        transform: rotateX(90deg) translateZ(100px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+
+    .item4{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .box5 {
+        background: rgba(30,150,189,.3);
+        transform: translateZ(100px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .item5{
+        flex-basis: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    .box6 {
+        background: rgba(169,150,189,.3);
+        transform: translateZ(-100px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    @keyframes play {
+        from{ transform: rotateX(0) rotateY(0) rotateZ(0);}
+        to {transform: rotateX(360deg) rotateY(180deg) rotateZ(90deg);}
+    }
+
+
+    span {
+        border: 30px black solid;
+        border-radius: 100%;
+    }
+
+</style>
+<body >
+
+<div class="warp">
+    <div class="box box1">
+        <span>
+        </span>
+    </div>
+    <div class="box box2">
+         <span>
+        </span>
+        <span>
+        </span>
+    </div>
+    <div class="box box3">
+
+            <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+
+    </div>
+    <div class="box box4">
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+        </div>
+
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+        </div>
+
+    </div>
+    <div class="box box5">
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+        </div>
+        <div class="item5">
+           <span>
+           </span>
+        </div>
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+        </div>
+
+    </div>
+    <div class="box box6">
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+        <div class="item4">
+           <span>
+           </span>
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

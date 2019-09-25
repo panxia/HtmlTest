@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: space-around;
+        flex-shrink: 1;
+    }
+
+
+    div {
+        width: 100px;
+        height: 100px;
+        border: white 5px solid;
+        background: green;
+
+
+    }
+
+    @keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+        0%{
+            transform: scale(1);  /*开始为原始大小*/
+        }
+        25%{
+            transform: scale(1.1); /*放大1.1倍*/
+        }
+        50%{
+            transform: scale(1);
+        }
+        75%{
+            transform: scale(1.1);
+        }
+
+
+    }
+
+
+
+
+</style>
+
+<script>
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    var srcdiv = null;
+    function drag(ev,divdom)
+    {
+        srcdiv=divdom;
+        ev.dataTransfer.setData("text/html",divdom.innerHTML);
+    }
+
+    function drop(ev,divdom)
+    {
+        ev.preventDefault();
+        if(srcdiv != divdom){
+            srcdiv.innerHTML = divdom.innerHTML;
+            divdom.innerHTML=ev.dataTransfer.getData("text/html");
+        }
+    }
+</script>
+<body >
+    <div ondrop="drop(event,this)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event, this)" >
+        1
+    </div>   <div ondrop="drop(event,this)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event, this)">
+        2
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>
+    <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+    </div>   <div>
+        end
+    </div>
+</body>
+</body>
+</html>
